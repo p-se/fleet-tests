@@ -2,11 +2,15 @@ all: clean build
 
 .PHONY: clean build install
 
-build:
-	cd charts && helm package ../src/config-chart
+build-config-chart:
+	cd charts/config-chart && helm package ../../src/config-chart
+
+install-config-chart:
+	helm install fleet-tests-config-chart charts/config-chart/config-chart-0.0.1+20221118113600.tgz
+
+build: build-config-chart
 	
 clean:
-	rm charts/*
+	find charts -name '*.tgz' -delete
 
-install:
-	helm install fleet-tests-config-chart charts/config-chart-0.0.1+20221118113600.tgz
+install: install-config-chart

@@ -1,0 +1,9 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: fleet-tests-config-chart
+  namespace: fleet-local
+spec:
+  repo: https://github.com/p-se/fleet-tests
+  paths:
+    - charts/config-chart
