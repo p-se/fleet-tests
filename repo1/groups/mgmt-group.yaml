@@ -1,0 +1,9 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: ClusterGroup
+metadata:
+  name: mgmt-group
+  namespace: fleet-local
+spec:
+  selector:
+    matchLabels:
+      name: local

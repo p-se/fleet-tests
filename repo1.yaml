@@ -1,0 +1,11 @@
+kind: GitRepo
+apiVersion: fleet.cattle.io/v1alpha1
+metadata:
+  name: repo1
+  namespace: fleet-local
+spec:
+  repo: https://github.com/p-se/fleet-tests.git
+  branch: sure-8794
+  paths:
+    - repo1/groups
+    - repo1/repos

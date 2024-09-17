@@ -1,0 +1,13 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: one
+  namespace: fleet-local
+spec:
+  repo: https://github.com/p-se/fleet-tests.git
+  branch: sure-8794
+  paths:
+    - repo2
+  targets:
+  - name: mgmt
+    clusterGroup: mgmt-group
